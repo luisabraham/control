@@ -151,6 +151,66 @@ $('#Crearcarrera').click(function(e){
                     else
                        location.href="Menu.jsp";     
                   
+        });   
+      
+});
+});
+//funcion del seletor de hora
+
+  $(function() {
+                    $('#basicExample').timepicker(
+                    {'disableTimeRanges': [['00:00', '7:00'],['22:00', '23:59']],'step': 1 ,'timeFormat': 'H:i'});
+                });
+//Funcion para crear una asignar salon
+$ (function(){
+$('#Asignar').click(function(e){
+    e.preventDefault();
+    var nrc = $('#nrc').val();
+    var ee = $('#ee').val();
+    ee= ee.toUpperCase();
+    var maestro = $('#maestro').val();
+    maestro= maestro.toUpperCase();
+    var salon = $('#salon').val();
+   var hora = $('#basicExample').val();
+    
+     if(isNaN($('#nrc').val()) || nrc == '')
+    {
+        alert("Nrc es numerico");
+        return false;
+        
+    } 
+     if(ee == '')
+    {
+        alert("Experiencia Educativa vacio");
+        return false
+    }
+     if(maestro == '')
+    {
+        alert(" Maestro vacio");
+        return false
+    }
+     if(salon == 'Elija salon')
+    {
+        alert(" Elija un salon");
+        return false
+    }
+     if(hora == '')
+    {
+        alert(" Hora vacia");
+        return false
+    }
+                    
+             var data={nrc:nrc,ee:ee,maestro:maestro,salon:salon,hora:hora};                 
+             $.post("Asignar",data,function(res,est,jqXHR){     
+                 
+                 
+                     alert(res);
+                    var op = confirm("Desea Asignar otro salon");
+                    if(op)
+                        location.href="Asignarsalon.jsp"; 
+                    else
+                       location.href="Menu.jsp";     
+                  
         });       
       
 });

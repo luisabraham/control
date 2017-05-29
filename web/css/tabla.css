@@ -1,0 +1,113 @@
+
+h1{
+    font-size: 30px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 15px;
+}
+table{
+    width:100%;
+    table-layout: fixed;
+}
+.tbl-header{
+    background-color: rgba(255,255,255,0.3);
+    border: 1px solid rgba(20, 20, 21, 0.9)
+
+}
+/* para editar la tabla, tamaño=height, */
+.tbl-content{
+    height:350px;
+    overflow-x:hidden;
+    overflow-y:auto;
+    margin-top: 0px;
+    border-bottom: 1px solid rgba(7, 8, 255, 0.93);
+
+}
+/*editar titulos*/
+th{
+    padding: 11px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: #2a3542;
+    text-transform: uppercase;
+}
+/*editar los renglones*/
+td{
+  
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    color: #0e0c0c;
+    border: 1px solid rgba(20, 20, 21, 0.9);
+  -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1); 
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1); 
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1);
+    transition: all 200ms ease-in;
+    transform: scale(1);   
+}
+
+tbody:hover tr:hover td {
+    background: #d9dfe3;
+    color: darkblue;
+    border-top: 1px solid #0b0b0b;
+    border-bottom: 1px solid #0b0b0b;
+    box-shadow: 0px 0px 100px #000000;
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.1);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.1);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.1);
+    transition: all 200ms ease-in;
+    transform: scale(1.1);
+
+}
+tr:nth-child(odd):hover td {
+    background: #1781c6;
+}
+
+/* demo styles */
+
+body{
+ background: rgba(226,226,226,1);
+background: -moz-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(226,226,226,1)), color-stop(50%, rgba(219,219,219,1)), color-stop(51%, rgba(209,209,209,1)), color-stop(100%, rgba(254,254,254,1)));
+background: -webkit-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+background: -o-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+background: -ms-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+background: linear-gradient(to right, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=1 );
+    font-family: 'Roboto', sans-serif;
+}
+section{
+    margin: 50px;
+}
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+tbody:hover td {
+	color: transparent;
+	text-shadow: 0 0 3px #aaa;
+}
+em{
+    background-color: darkblue;
+}
+

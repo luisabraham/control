@@ -5,6 +5,7 @@
  */
 package Modelo;
 
+import Modelo.Encapsulacion.Salon;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -71,19 +72,19 @@ public boolean crear_salon(String salon, int capacidad, String programa){
     }
 
 //------------------------------------------------------------------------------------------
-/*public Usuario getUsuarios(int id)
+public Salon getSalon(String nsalon)
    {
-       Usuario u = null;
+       Salon salon = null;
        PreparedStatement pat = null;
        ResultSet rs = null;
        try{
-           String sql ="SELECT id_Usuario,Nombre,ApellidoP,ApellidoM,Usuario,Contrasena,Tipousuario,Dnombre FROM usuarios inner join departamento on usuarios.Departamento=departamento.iddepartamento where id_Usuario = '"+id+"'";
+           String sql ="SELECT * FROM salon where Nombre = '"+nsalon+"'";
            pat =  Conexion.conectar().prepareStatement(sql);
            rs = pat.executeQuery();
          
          while (rs.next())
          {
-            u = new Usuario(rs.getString(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6),rs.getString(7),rs.getString(8));
+            salon = new Salon(rs.getInt(1),rs.getString(2), rs.getInt(3), rs.getString(4));
           
          }
        }catch(Exception e){
@@ -96,36 +97,11 @@ public boolean crear_salon(String salon, int capacidad, String programa){
            }catch(Exception e){
            }
    }
-     return u;  
+     return salon;  
    }
    
 //------------------------------------------------------------------------------------
-public boolean modificar_password(int id,String pass){
-      boolean flag=false;
-        PreparedStatement pat = null;
-        try{
-            String sql = "update usuarios set Contrasena='"+pass+"' where id_Usuario='"+id+"'";
-            
-            pat =  Conexion.conectar().prepareStatement(sql);
-           
-            if(pat.executeUpdate() > 0)
-            {
-                flag = true;
-            }
-            
-        }catch(Exception e){
-            
-        }finally{
-            try{
-            if( Conexion.conectar()!= null) 
-                 Conexion.desconectar();
-            }catch(Exception e){
-                
-            }
-            return flag;
-        }
-    }
-//--------------------------------------------------------------------------------------
+/*
 public boolean eliminarUsuario(String Usuario){
         boolean flag=false;
         PreparedStatement pat = null;
@@ -180,59 +156,8 @@ public boolean eliminarUsuario(String Usuario){
         
         return false;
     }
- //--------------------------------------------------------------------------------
- public boolean restablecer_contrasena(String idUsuario,String contra){
-        boolean flag=false;
-        PreparedStatement pat = null;
-        try{
-            String sql = "update usuarios set Contrasena='"+contra+"' where Usuario='"+idUsuario+"'";
-            
-            pat =  Conexion.conectar().prepareStatement(sql);
-           
-            if(pat.executeUpdate() > 0)
-            {
-                flag = true;
-            }
-            
-        }catch(Exception e){
-            
-        }finally{
-            try{
-            if( Conexion.conectar()!= null) 
-                 Conexion.desconectar();
-            if(pat != null) pat.close();
-            }catch(Exception e){
-                
-            }
-            return flag;
-        }
-             
-    }*/
  
- public boolean disponibilidad_de_usuairo(String usuario){
-  
-  PreparedStatement pat = null;
-  ResultSet rs = null;
-  try{
-  
-   pat =  Conexion.conectar().prepareStatement("SELECT * FROM usuarios where Usuario='"+usuario+"' ");
-   rs = pat.executeQuery();
-   while(rs.next()){
-    return true;
-   }
-  
-  }catch(Exception e){
-       
-   }finally{
-        try{
-           if( Conexion.conectar()!= null) Conexion.desconectar();
-           if(pat != null)pat.close();
-           if(rs != null)rs.close();
-           }catch(Exception e){
-           }
-   }
-  return false;
- }  
+ */
 
     
 }

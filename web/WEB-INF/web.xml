@@ -16,6 +16,10 @@
         <servlet-name>Crearcarrera</servlet-name>
         <servlet-class>Controlador.Crear.Crearcarrera</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Asignar</servlet-name>
+        <servlet-class>Controlador.Asignar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Autentificacion</servlet-name>
         <url-pattern>/Autentificacion</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>Crearcarrera</servlet-name>
         <url-pattern>/Crearcarrera</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Asignar</servlet-name>
+        <url-pattern>/Asignar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
